@@ -6,7 +6,7 @@ void countfreq(int a[],int n){
         mp[a[i]]++;
     }
     for(auto i:mp){
-        cout<<i.first<"frequency is "<<i.second;
+        cout<<i.first<<"frequency is "<<i.second;
     }
 }
 int main()
