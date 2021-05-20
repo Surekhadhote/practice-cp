@@ -59,3 +59,38 @@ int main()
     }
     return 0; 
 }   // 
+//another method
+
+/*
+class Solution
+{
+  public:
+    
+    int extractMaximum(string S) 
+    { 
+        int num = 0, res = 0, flag =0; 
+        for (int i = 0; i<S.length(); i++) 
+        { 
+            // If a numeric value comes, start converting 
+            // it into an integer till there are consecutive 
+            // numeric digits 
+            if (S[i] >= '0' && S[i] <= '9') 
+            {
+                num = num * 10 + (S[i]-'0'); 
+                flag = 1; //means that there is a digit present
+            }
+    
+            else
+            { 
+                res = max(res, num); 
+                num = 0; 
+            } 
+        } 
+        if(flag == 1)
+            return max(res, num); 
+        else
+            return -1;
+    } 
+
+};
+*/
