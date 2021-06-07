@@ -21,3 +21,22 @@ public:
         return nums.size();
     }
 };
+//method 3
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        set<int> s;
+        for(int i=0;i<nums.size();i++){
+           s.insert(nums[i]);
+          
+        }
+        vector<int> v;
+         for(auto i:s){
+             v.push_back(i);
+          // s.insert(nums[i]);
+        }
+        nums = v;
+    
+    return s.size();
+    }
+};
