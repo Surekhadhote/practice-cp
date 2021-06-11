@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include<string.h>
+
 using namespace std;
 
 string ltrim(const string &);
@@ -12,32 +12,30 @@ string rtrim(const string &);
  * The function accepts STRING_ARRAY operations as parameter.
  */
 
-vector<int> getMax(vector<string> ops) {
-stack <int> s;
-vector <int> v;
-int max = 0;
-for(auto i : ops){
-    string x = i;
-    
-    if(x[0] == '1')
-    {
-        x[0] = '\0';
-        x[1] = '\0';
-        string r = x;
-     int a = (atoi)r;
-        s.push(a);
-        if(max<a)
-        max = a;
-    }
-    else if(x[0] == '2'){
-        s.pop();
-    }
-    else {
-        v.push_back(max);
-        max = 0;
-    }
-}
+vector<int> getMax(vector<string> op) {
+        vector <int> v;
+        vector<int> s;
+for(int i=0;i<op.size();i++){
+if(op[i][0] == '1'){
+      
+        string t = op[i];
+        string n = t.substr(2);
 
+        s.push_back(stoi(n));
+}else if(op[i][0] == '3'){
+        int max = s[0];
+      for(int i=0;i<s.size();i++){
+              if(s[i]>max){
+                      max = s[i];
+              }
+      }
+        v.push_back(max);
+        
+}else{
+      
+        s.pop_back();
+}
+}
 return v;
 }
 
@@ -97,3 +95,4 @@ string rtrim(const string &str) {
 
     return s;
 }
+
